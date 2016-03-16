@@ -1,4 +1,43 @@
 div {
 	border: red 1px solid;
+}
+
+#menu {
 	text-align: right;
+}
+
+#home_module {
+	text-align: center;
+}
+
+#details_module {
+	overflow: hidden;
+    clear: both;
+    display: inline-flex;
+    position: absolute;
+    height: 50%;
+}
+
+#details_image_container {
+	float: left;
+    display: inline-flex;
+}
+
+#details_image {
+	width: 300px;
+    height: 300px;
+    display: inline-flex;
+    margin: 0 50px 0 50px;
+}
+
+#details_description_container {
+	float: left;
+    width: 50%;
+    height: 70%;
+    display: inline-flex;
+    overflow: hidden;
+}
+
+#details_description {
+    margin-top: 50px;
 }
