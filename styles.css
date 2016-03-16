@@ -1,20 +1,32 @@
 div {
 	border: red 1px solid;
+	margin:10px 10px 10px 10px;
+}
+
+#menu_container {
+	width: 100%;
+	position: fixed;
+	top:0px;
 }
 
 #menu {
 	text-align: right;
+	padding-right: 10px;
 }
 
 #home_module {
 	text-align: center;
 }
 
+#home_module_description {
+    margin: 0 150px 0 150px;
+}
+
 #details_module {
 	overflow: hidden;
     clear: both;
     display: inline-flex;
-    position: absolute;
+    position: relative;
     height: 50%;
 }
 
@@ -40,4 +52,12 @@ div {
 
 #details_description {
     margin-top: 50px;
+}
+
+#more_info_module {
+	text-align: center;
+}
+
+#email_input {
+	width: 30%;
 }

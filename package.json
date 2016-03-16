@@ -1,0 +1,22 @@
+{
+  "name": "growthtest",
+  "version": "1.0.0",
+  "description": "growth test for growth marketing job",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvald8/growthtest.git"
+  },
+  "author": "Jon Ringvald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jvald8/growthtest/issues"
+  },
+  "homepage": "https://github.com/jvald8/growthtest",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.10.0"
+  }
+}
