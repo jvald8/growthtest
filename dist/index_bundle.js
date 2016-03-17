@@ -54,19 +54,92 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(159);
 
-	var HelloWorld = React.createClass({
-	  displayName: 'HelloWorld',
+	var MoreInfoModule = React.createClass({
+	    displayName: 'MoreInfoModule',
 
-	  render: function () {
-	    return React.createElement(
-	      'div',
-	      null,
-	      'Hello World!'
-	    );
-	  }
+	    getInitialState() {
+	        return {
+	            email: ''
+	        };
+	    },
+	    handleSubmit: function (e) {
+	        e.preventDefault();
+	        var email = document.getElementById('email_input').value;
+	        console.log(email);
+	    },
+	    render: function () {
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement('a', { name: 'more_info_div' }),
+	            React.createElement(
+	                'p',
+	                null,
+	                'Enter your email to get more information:'
+	            ),
+	            React.createElement(
+	                'form',
+	                { id: 'email_form' },
+	                React.createElement('input', { id: 'email_input', placeholder: 'Email Address' }),
+	                ' ',
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'button',
+	                    { id: 'subscribe_button', onClick: this.handleSubmit },
+	                    'Subscribe'
+	                )
+	            )
+	        );
+	    }
 	});
 
-	ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('hello_world'));
+	ReactDOM.render(React.createElement(MoreInfoModule, null), document.getElementById('more_info_module'));
+
+	var DetailsImageContainer = React.createClass({
+	    displayName: 'DetailsImageContainer',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'details_image_container' },
+	            React.createElement('img', { id: 'details_image', src: 'http://www.wired.com/images_blogs/autopia/2014/01/01-toyota-hydrogen.jpg' })
+	        );
+	    }
+	});
+
+	//ReactDOM.render(<DetailsImageContainer />, document.getElementById('details_image_container'));
+
+	var DetailsDescriptionContainer = React.createClass({
+	    displayName: 'DetailsDescriptionContainer',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'details_description_container' },
+	            React.createElement(
+	                'p',
+	                { id: 'details_description' },
+	                'laborum velit proident qui sunt et magna laboris proident aliqua ad anim duis incididunt excepteur reprehenderit commodo excepteur velit dolore sit Lorem laboris pariatur do incididunt ut minim dolor Lorem eiusmod proident eu aliqua nulla do minim ut incididunt veniam qui ea eu voluptate commodo et nulla duis pariatur laborum'
+	            )
+	        );
+	    }
+	});
+
+	//ReactDOM.render(<DetailsDescriptionContainer />, document.getElementById('details_description_container'));
+
+	var DetailsModule = React.createClass({
+	    displayName: '',
+	    render() {
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement(DetailsImageContainer, null),
+	            React.createElement(DetailsDescriptionContainer, null)
+	        );
+	    }
+	});
+
+	ReactDOM.render(React.createElement(DetailsModule, null), document.getElementById('details_module'));
 
 /***/ },
 /* 2 */
