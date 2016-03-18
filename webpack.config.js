@@ -1,8 +1,14 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+var HTMLWebpackPluginComplexConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/complex.html',
   filename: 'complex.html',
+  inject: 'body'
+});
+
+var HTMLWebpackPluginSimpleConfig = new HtmlWebpackPlugin({
+  template: __dirname + '/app/simple.html',
+  filename: 'simple.html',
   inject: 'body'
 });
 
@@ -19,5 +25,5 @@ module.exports = {
 		filename: "index_bundle.js",
 		path: __dirname + '/dist'
 	},
-	plugins: [HTMLWebpackPluginConfig]
+	plugins: [HTMLWebpackPluginComplexConfig, HTMLWebpackPluginSimpleConfig]
 };

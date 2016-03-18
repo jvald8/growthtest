@@ -54,6 +54,112 @@
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(159);
 
+	var MenuContainer = React.createClass({
+	    displayName: 'MenuContainer',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'menu_container' },
+	            React.createElement(
+	                'div',
+	                { name: 'menu', id: 'menu' },
+	                React.createElement(
+	                    'a',
+	                    { href: '#home_div' },
+	                    React.createElement(
+	                        'button',
+	                        { id: 'home_link' },
+	                        'Home'
+	                    )
+	                ),
+	                React.createElement(
+	                    'a',
+	                    { href: '#details_div' },
+	                    React.createElement(
+	                        'button',
+	                        { id: 'details_link' },
+	                        'Details'
+	                    )
+	                ),
+	                React.createElement(
+	                    'a',
+	                    { href: '#more_info_div' },
+	                    React.createElement(
+	                        'button',
+	                        { id: 'more_info_link' },
+	                        'More info'
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
+	var HomeModule = React.createClass({
+	    displayName: 'HomeModule',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'home_module' },
+	            React.createElement('a', { name: 'home_div' }),
+	            React.createElement(
+	                'h4',
+	                { id: 'home_module_header' },
+	                'The Future of Cars'
+	            ),
+	            React.createElement(
+	                'p',
+	                { id: 'home_module_description' },
+	                'laborum velit proident qui sunt et magna laboris proident aliqua ad anim duis incididunt excepteur reprehenderit commodo excepteur velit dolore sit Lorem laboris pariatur do incididunt ut minim dolor Lorem eiusmod proident eu aliqua nulla do minim ut incididunt veniam qui ea eu voluptate commodo et nulla duis pariatur laborum'
+	            )
+	        );
+	    }
+	});
+
+	var DetailsImageContainer = React.createClass({
+	    displayName: 'DetailsImageContainer',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'details_image_container' },
+	            React.createElement('img', { id: 'details_image', src: 'http://www.wired.com/images_blogs/autopia/2014/01/01-toyota-hydrogen.jpg' })
+	        );
+	    }
+	});
+
+	var DetailsDescriptionContainer = React.createClass({
+	    displayName: 'DetailsDescriptionContainer',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'details_description_container' },
+	            React.createElement(
+	                'p',
+	                { id: 'details_description' },
+	                'laborum velit proident qui sunt et magna laboris proident aliqua ad anim duis incididunt excepteur reprehenderit commodo excepteur velit dolore sit Lorem laboris pariatur do incididunt ut minim dolor Lorem eiusmod proident eu aliqua nulla do minim ut incididunt veniam qui ea eu voluptate commodo et nulla duis pariatur laborum'
+	            )
+	        );
+	    }
+	});
+
+	var DetailsModule = React.createClass({
+	    displayName: 'DetailsModule',
+
+	    render() {
+	        return React.createElement(
+	            'div',
+	            { id: 'details_module' },
+	            React.createElement('a', { name: 'details_div' }),
+	            React.createElement(DetailsImageContainer, null),
+	            React.createElement(DetailsDescriptionContainer, null)
+	        );
+	    }
+	});
+
 	var MoreInfoModule = React.createClass({
 	    displayName: 'MoreInfoModule',
 
@@ -70,7 +176,7 @@
 	    render: function () {
 	        return React.createElement(
 	            'div',
-	            null,
+	            { id: 'more_info_module' },
 	            React.createElement('a', { name: 'more_info_div' }),
 	            React.createElement(
 	                'p',
@@ -93,53 +199,35 @@
 	    }
 	});
 
-	ReactDOM.render(React.createElement(MoreInfoModule, null), document.getElementById('more_info_module'));
+	var ComplexApp = React.createClass({
+	    displayName: 'ComplexApp',
 
-	var DetailsImageContainer = React.createClass({
-	    displayName: 'DetailsImageContainer',
-
-	    render() {
-	        return React.createElement(
-	            'div',
-	            { id: 'details_image_container' },
-	            React.createElement('img', { id: 'details_image', src: 'http://www.wired.com/images_blogs/autopia/2014/01/01-toyota-hydrogen.jpg' })
-	        );
-	    }
-	});
-
-	//ReactDOM.render(<DetailsImageContainer />, document.getElementById('details_image_container'));
-
-	var DetailsDescriptionContainer = React.createClass({
-	    displayName: 'DetailsDescriptionContainer',
-
-	    render() {
-	        return React.createElement(
-	            'div',
-	            { id: 'details_description_container' },
-	            React.createElement(
-	                'p',
-	                { id: 'details_description' },
-	                'laborum velit proident qui sunt et magna laboris proident aliqua ad anim duis incididunt excepteur reprehenderit commodo excepteur velit dolore sit Lorem laboris pariatur do incididunt ut minim dolor Lorem eiusmod proident eu aliqua nulla do minim ut incididunt veniam qui ea eu voluptate commodo et nulla duis pariatur laborum'
-	            )
-	        );
-	    }
-	});
-
-	//ReactDOM.render(<DetailsDescriptionContainer />, document.getElementById('details_description_container'));
-
-	var DetailsModule = React.createClass({
-	    displayName: '',
 	    render() {
 	        return React.createElement(
 	            'div',
 	            null,
-	            React.createElement(DetailsImageContainer, null),
-	            React.createElement(DetailsDescriptionContainer, null)
+	            React.createElement(MenuContainer, null),
+	            React.createElement(HomeModule, null),
+	            React.createElement(DetailsModule, null),
+	            React.createElement(MoreInfoModule, null)
 	        );
 	    }
 	});
 
-	ReactDOM.render(React.createElement(DetailsModule, null), document.getElementById('details_module'));
+	ReactDOM.render(React.createElement(ComplexApp, null), document.getElementById('complex_app'));
+
+	/*var SimpleApp = React.createClass({
+		render() {
+	        return (
+	        	<div>
+	        		<HomeModule />
+	        		<MoreInfoModule />
+	            </div>
+	        );
+	    }
+	})
+
+	ReactDOM.render(<SimpleApp />, document.getElementById('simple_app'));*/
 
 /***/ },
 /* 2 */
