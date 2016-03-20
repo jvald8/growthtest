@@ -220,8 +220,7 @@
 		render() {
 	        return (
 	        	<div>
-	        		<HomeModule />
-	        		<MoreInfoModule />
+	        		<p>sldfblsdkjfbdslkjfb</p>
 	            </div>
 	        );
 	    }

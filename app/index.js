@@ -110,8 +110,7 @@ ReactDOM.render(<ComplexApp />, document.getElementById('complex_app'));
 	render() {
         return (
         	<div>
-        		<HomeModule />
-        		<MoreInfoModule />
+        		<p>sldfblsdkjfbdslkjfb</p>
             </div>
         );
     }
