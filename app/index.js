@@ -1,5 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var hashHistory = require('react-router').hashHistory;
 
 var MenuContainer = React.createClass({
 	render() {
@@ -104,9 +107,7 @@ var ComplexApp = React.createClass({
     }
 })
 
-ReactDOM.render(<ComplexApp />, document.getElementById('complex_app'));
-
-/*var SimpleApp = React.createClass({
+var SimpleApp = React.createClass({
 	render() {
         return (
         	<div>
@@ -116,5 +117,16 @@ ReactDOM.render(<ComplexApp />, document.getElementById('complex_app'));
     }
 })
 
-ReactDOM.render(<SimpleApp />, document.getElementById('simple_app'));*/
+var App = React.createClass({
+	render() {
+		return <div>Hello there, welcome to the project</div>
+	}
+})
+
+ReactDOM.render((
+  <Router history={hashHistory}>
+  	<Route path="/" component={App} />
+  	<Route path="/complex" component={ComplexApp} />
+  </Router>
+), document.getElementById('app'))
 
