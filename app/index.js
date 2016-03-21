@@ -3,6 +3,10 @@ var ReactDOM = require('react-dom');
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var hashHistory = require('react-router').hashHistory;
+var NavLink = require('react-router').Link;
+var browserHistory = require('react-router').browserHistory;
+var IndexRoute = require('react-router').IndexRoute;
+
 
 var MenuContainer = React.createClass({
 	render() {
@@ -16,14 +20,14 @@ var MenuContainer = React.createClass({
 			</div>
         );
     }
-})
+});
 
 var HomeModule = React.createClass({
     render() {
         return (
             <div id="home_module">
             	<a name="home_div"></a>
-            	<h4 id="home_module_header">The Future of Cars</h4>
+            	<h2 id="home_module_header">The Future of Cars</h2>
 				<p id="home_module_description">laborum velit proident qui sunt et magna laboris proident 
 				aliqua ad anim duis incididunt excepteur reprehenderit commodo excepteur velit dolore sit
 				Lorem laboris pariatur do incididunt ut minim dolor Lorem eiusmod proident eu aliqua nulla 
@@ -92,7 +96,7 @@ var MoreInfoModule = React.createClass({
 			</div>
 		)
 	}
-})
+});
 
 var ComplexApp = React.createClass({
 	render() {
@@ -105,28 +109,30 @@ var ComplexApp = React.createClass({
             </div>
         );
     }
-})
+});
 
 var SimpleApp = React.createClass({
 	render() {
         return (
         	<div>
-        		<p>sldfblsdkjfbdslkjfb</p>
+        		<HomeModule />
+        		<MoreInfoModule />
             </div>
         );
     }
-})
+});
 
 var App = React.createClass({
 	render() {
 		return <div>Hello there, welcome to the project</div>
 	}
-})
+});
 
 ReactDOM.render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
   	<Route path="/" component={App} />
   	<Route path="/complex" component={ComplexApp} />
+  	<Route path="/simple" component={SimpleApp} />
   </Router>
-), document.getElementById('app'))
+), document.getElementById('app'));
 

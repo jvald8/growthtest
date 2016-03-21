@@ -58,6 +58,9 @@
 	var Router = __webpack_require__(160).Router;
 	var Route = __webpack_require__(160).Route;
 	var hashHistory = __webpack_require__(160).hashHistory;
+	var NavLink = __webpack_require__(160).Link;
+	var browserHistory = __webpack_require__(160).browserHistory;
+	var IndexRoute = __webpack_require__(160).IndexRoute;
 
 	var MenuContainer = React.createClass({
 	    displayName: 'MenuContainer',
@@ -108,7 +111,7 @@
 	            { id: 'home_module' },
 	            React.createElement('a', { name: 'home_div' }),
 	            React.createElement(
-	                'h4',
+	                'h2',
 	                { id: 'home_module_header' },
 	                'The Future of Cars'
 	            ),
@@ -219,11 +222,8 @@
 	        return React.createElement(
 	            'div',
 	            null,
-	            React.createElement(
-	                'p',
-	                null,
-	                'sldfblsdkjfbdslkjfb'
-	            )
+	            React.createElement(HomeModule, null),
+	            React.createElement(MoreInfoModule, null)
 	        );
 	    }
 	});
@@ -241,9 +241,10 @@
 
 	ReactDOM.render(React.createElement(
 	    Router,
-	    { history: hashHistory },
+	    { history: browserHistory },
 	    React.createElement(Route, { path: '/', component: App }),
-	    React.createElement(Route, { path: '/complex', component: ComplexApp })
+	    React.createElement(Route, { path: '/complex', component: ComplexApp }),
+	    React.createElement(Route, { path: '/simple', component: SimpleApp })
 	), document.getElementById('app'));
 
 /***/ },
