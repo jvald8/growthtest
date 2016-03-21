@@ -1,5 +1,4 @@
 div {
-	border: red 1px solid;
 	margin:10px 10px 10px 10px;
 }
 
@@ -63,4 +62,8 @@ div {
 
 #email_input {
 	width: 30%;
+}
+
+.module {
+	padding: 20px 0 20px 0;
 }

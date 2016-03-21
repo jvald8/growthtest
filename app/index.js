@@ -23,7 +23,7 @@ var MenuContainer = React.createClass({
 var HomeModule = React.createClass({
     render() {
         return (
-            <div id="home_module">
+            <div id="home_module" className="module">
             	<a name="home_div"></a>
             	<h2 id="home_module_header">The Future of Cars</h2>
 				<p id="home_module_description">laborum velit proident qui sunt et magna laboris proident 
@@ -62,7 +62,7 @@ var DetailsDescriptionContainer = React.createClass({
 var DetailsModule = React.createClass({
     render() {
         return (
-        	<div id="details_module">
+        	<div id="details_module" className="module">
         		<a name="details_div"></a>
 	            <DetailsImageContainer />
 	            <DetailsDescriptionContainer />
@@ -84,13 +84,13 @@ var MoreInfoModule = React.createClass({
 	},
 	render: function() {
 		return (
-			<div id="more_info_module">
-				<a name="more_info_div"></a>
+			<div id="more_info_module" className="module">
 				<p>Enter your email to get more information:</p>
 				<form id="email_form">
 					<input id="email_input" placeholder="Email Address" /> <br />
 					<button id="subscribe_button" onClick={this.handleSubmit}>Subscribe</button>
 				</form>
+				<a name="more_info_div"></a>
 			</div>
 		)
 	}
@@ -122,7 +122,14 @@ var SimpleApp = React.createClass({
 
 var App = React.createClass({
 	render() {
-		return <div>Hello there, welcome to the project</div>
+		return (
+			<div>
+				<p>Hello there, welcome to the hydrogen car project</p>
+				<a href="/complex">Complex version of site</a>
+				<br />
+				<a href="/simple">Simple version of site</a>
+			</div>
+		)
 	}
 });
 

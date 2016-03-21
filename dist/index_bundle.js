@@ -106,7 +106,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            'div',
-	            { id: 'home_module' },
+	            { id: 'home_module', className: 'module' },
 	            React.createElement('a', { name: 'home_div' }),
 	            React.createElement(
 	                'h2',
@@ -153,7 +153,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            'div',
-	            { id: 'details_module' },
+	            { id: 'details_module', className: 'module' },
 	            React.createElement('a', { name: 'details_div' }),
 	            React.createElement(DetailsImageContainer, null),
 	            React.createElement(DetailsDescriptionContainer, null)
@@ -177,8 +177,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            'div',
-	            { id: 'more_info_module' },
-	            React.createElement('a', { name: 'more_info_div' }),
+	            { id: 'more_info_module', className: 'module' },
 	            React.createElement(
 	                'p',
 	                null,
@@ -195,7 +194,8 @@
 	                    { id: 'subscribe_button', onClick: this.handleSubmit },
 	                    'Subscribe'
 	                )
-	            )
+	            ),
+	            React.createElement('a', { name: 'more_info_div' })
 	        );
 	    }
 	});
