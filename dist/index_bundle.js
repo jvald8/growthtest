@@ -57,8 +57,6 @@
 	var ReactDOM = __webpack_require__(159);
 	var Router = __webpack_require__(160).Router;
 	var Route = __webpack_require__(160).Route;
-	var hashHistory = __webpack_require__(160).hashHistory;
-	var NavLink = __webpack_require__(160).Link;
 	var browserHistory = __webpack_require__(160).browserHistory;
 	var IndexRoute = __webpack_require__(160).IndexRoute;
 

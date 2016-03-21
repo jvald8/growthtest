@@ -18,21 +18,32 @@ div {
 	text-align: center;
 }
 
-#home_module_description {
-    margin: 0 150px 0 150px;
+@media screen and (min-width:688px) {
+	#home_module_description {
+    	margin: 0 150px 0 150px;
+	}
 }
 
 #details_module {
 	overflow: hidden;
     clear: both;
-    display: inline-flex;
     position: relative;
     height: 50%;
 }
 
+@media screen and (max-width:687px) {
+	#details_description_container {
+		float: left;
+	    width: 85%;
+	    height: 70%;
+	    display: inline-flex;
+	    overflow: hidden;
+	}
+}
+
 #details_image_container {
-	float: left;
-    display: inline-flex;
+		float: left;
+    	display: inline-flex;
 }
 
 #details_image {
@@ -40,14 +51,6 @@ div {
     height: 300px;
     display: inline-flex;
     margin: 0 50px 0 50px;
-}
-
-#details_description_container {
-	float: left;
-    width: 50%;
-    height: 70%;
-    display: inline-flex;
-    overflow: hidden;
 }
 
 #details_description {
